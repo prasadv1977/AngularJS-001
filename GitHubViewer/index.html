@@ -2,31 +2,19 @@
 <html ng-app="githubviewer">
 
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script data-require="angular.js@1.5.8" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
     <link rel="stylesheet" href="style.css" />
-    <script src="scriptMainCtrl.js"></script>
-    <script src="scriptHTTPCtrl.js"></script>
+    <script src="app.js"></script>
+    <script src="gitHub.js"></script>
+    <script src="MainController.js"></script>
+    <script src="UserController.js"></script>
+    <script src="repoController.js"></script>
   </head>
 
   <body>
-    <h1>Hello Plunker!</h1>
-    {{ 456 / 16 }}
-    <div ng-controller = "MainController">
-      <h2>{{ message }}</h2>
-      <div> First Name: {{ person.firstName }}</div>
-      <div> First Name: {{ person.lastName }}</div>
-    </div>
-    <br>
-    <div ng-controller = "httpController">
-      {{ error }}
-      <form name="searchUser" ng-submit="search(username)" >
-        <input type="search" required placeholder="enter username to search" ng-model="username" />
-        <input type="submit" value="Search" />
-      </form>
-      {{ countdown }}
-      <br>
-      <div ng-include="'userdetails.html'" ng-show="user"> </div>
-    </div>
+    <h1> GitHub Viewer</h1>
+    <div ng-view=""></div>
   </body>
 
 </html>
