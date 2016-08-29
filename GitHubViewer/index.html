@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="githubviewer">
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="scriptMainCtrl.js"></script>
+    <script src="scriptHTTPCtrl.js"></script>
+  </head>
+
+  <body>
+    <h1>Hello Plunker!</h1>
+    {{ 456 / 16 }}
+    <div ng-controller = "MainController">
+      <h2>{{ message }}</h2>
+      <div> First Name: {{ person.firstName }}</div>
+      <div> First Name: {{ person.lastName }}</div>
+    </div>
+    <br>
+    <div ng-controller = "httpController">
+      {{ error }}
+      <form name="searchUser" ng-submit="search(username)" >
+        <input type="search" required placeholder="enter username to search" ng-model="username" />
+        <input type="submit" value="Search" />
+      </form>
+      {{ countdown }}
+      <br>
+      <div ng-include="'userdetails.html'" ng-show="user"> </div>
+    </div>
+  </body>
+
+</html>
